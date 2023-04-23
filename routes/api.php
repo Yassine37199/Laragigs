@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +28,9 @@ Route::get('/posts' , function() {
     ];
 
     return response()->json($data, 200);
+});
+
+Route::get('/users' , function() {
+    $users = User::all();
+    return response()->json($users , 200);
 });
